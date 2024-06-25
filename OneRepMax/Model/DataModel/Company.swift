@@ -1,8 +1,8 @@
 //
 //  Company.swift
-//  Companies
+//  OneRepMax
 //
-//  Created by Gustavo Halperin on 5/20/24.
+//  Created by Gustavo Halperin on 6/20/24.
 //
 
 import Foundation

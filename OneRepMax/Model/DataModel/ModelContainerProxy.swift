@@ -1,9 +1,10 @@
 //
 //  ModelContainerProxy.swift
-//  Employees
+//  OneRepMax
 //
-//  Created by Gustavo Halperin on 5/20/24.
+//  Created by Gustavo Halperin on 6/20/24.
 //
+
 
 import Foundation
 import SwiftUI
@@ -21,7 +22,8 @@ class ModelContainerProxy {
     
     func loadModelContainer() throws {
         let schema = Schema([
-            Company.self,
+            Workout.self,
+            WorkoutHistorical.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         self.modelContainer = try ModelContainer(for: schema, configurations: [modelConfiguration])

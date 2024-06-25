@@ -40,15 +40,21 @@ class AppManager {
         }
         
         try modelContainer.mainContext.delete(model: WorkoutHistorical.self)
+        try modelContainer.mainContext.delete(model: Workout.self)
         
-        let workoutHistoricalList: [WorkoutHistorical] = try await WorkoutHistoricalEngine()
+        let (workoutHistoricalList, workoutList) = try await WorkoutHistoricalEngine()
             .process(workoutList: workoutList, favorityStatus: favorityStatus)
         for workoutHistorical in workoutHistoricalList {
             modelContainer.mainContext.insert(workoutHistorical)
         }
+        for workout in workoutList {
+            modelContainer.mainContext.insert(workout)
+        }
     }
     
-    //let googleFileId = "1HomqPGU5CW6Wqk5ykM0goZLAiAgtTtl2"
+    func cleanDataBase() async throws {
+        try await workoutListRefresh(.init())
+    }
     func loadWorkouts(googleFileId:String) async throws {
         let workoutList: [ResponseWorkout] = try await ApiServer().refresh(googleFileId.googleFileIdToURL )
         try await workoutListRefresh(workoutList)

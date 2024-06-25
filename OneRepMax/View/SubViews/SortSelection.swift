@@ -9,11 +9,11 @@
 import Foundation
 
 enum SortSelection: String, Identifiable, CaseIterable {
-    case NoOrder = "NoOrder"
+    case NoOrder = "Random"
     case Name = "Name"
     case Load = "1RM"
     case LoadRevert = "! 1RM"
-    case Favorities = "Favorities"
+    case Favorities = "Start"
     
     var id: Self { self }
     

@@ -1,0 +1,33 @@
+{
+  "originHash" : "6818a9b2f7b299044d54167bfbc775d46c6aeb9523fb467cae2f996e81656e9a",
+  "pins" : [
+    {
+      "identity" : "networkkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iDT-Swift/NetworkKit.git",
+      "state" : {
+        "revision" : "466cf4b72656fac7f83f412edfef4e0c764fa5de",
+        "version" : "0.1.1"
+      }
+    },
+    {
+      "identity" : "swiftext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iDT-Swift/SwiftExt.git",
+      "state" : {
+        "revision" : "ba942fcb6468ae2b494bef46749e46fdd63fd89c",
+        "version" : "0.1.0"
+      }
+    },
+    {
+      "identity" : "swiftuiext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/iDT-Swift/SwiftUIExt.git",
+      "state" : {
+        "revision" : "6b54eaeb26e460652cc37402f0fb7416aae63b47",
+        "version" : "7.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}

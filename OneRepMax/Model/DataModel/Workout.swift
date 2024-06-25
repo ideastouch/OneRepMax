@@ -4,19 +4,17 @@
 //
 //  Created by Gustavo Halperin on 6/20/24.
 //
-
-
 import Foundation
 import SwiftData
 
 @Model
-class MarketCap {
-    let fmt: String      // eg. "2.572T"
-    let longFmt: String  // eg. "2,571,783,372,800"
-    let raw: Int         // eg. 2571783372800
-    init(fmt: String, longFmt: String, raw: Int) {
-        self.fmt = fmt
-        self.longFmt = longFmt
-        self.raw = raw
+class Workout {
+    let exercise: String  // eg. "Back Squat"
+    let date: Date        // DateFormatter: "MMM dd yyyy", eg "Oct 11 2020"
+    let oneRepMax: Int16  //
+    init(date: Date, exercise: String, oneRepMax: Int16) {
+        self.date = date
+        self.exercise = exercise
+        self.oneRepMax = oneRepMax
     }
 }

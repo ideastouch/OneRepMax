@@ -1,9 +1,10 @@
 //
 //  Logging.swift
-//  Employees
+//  OneRepMax
 //
-//  Created by Gustavo Halperin on 5/20/24.
+//  Created by Gustavo Halperin on 6/20/24.
 //
+
 
 import OSLog
 
@@ -12,7 +13,7 @@ enum LoggerFactory: String {
     case dataModel = "DataModel"
     case networking = "Networking"
     
-    static let subsystem = "com.yahoo.employees"
+    static let subsystem = "com.ideastouch.onerepmax"
     static let shared: Logger = {
         Logger(subsystem: subsystem,
                category: "App")

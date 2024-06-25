@@ -8,25 +8,72 @@
 import SwiftUI
 import SwiftData
 
+fileprivate
+let logger = LoggerFactory.category(.setup)
+
 @main
 struct OneRepMaxApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
+    @State private var isLoading = true
+    private var modelProxy: ModelContainerProxy = .init()
+    private var appManager: AppManager = .init()
 
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if isLoading == false,
+                    let modelContainer = modelProxy.modelContainer {
+                    ContentView()
+                        .environment(appManager)
+                        .modelContainer(modelContainer)
+                } else {
+                    Text("Loading Model Data")
+                }
+            }
+            .task {
+                do {
+                    try modelProxy.loadModelContainer()
+                    appManager.modelContainer = modelProxy.modelContainer
+                } catch {
+                    logger.critical("Failure loading model")
+                }
+                isLoading = false
+            }
         }
-        .modelContainer(sharedModelContainer)
+    }
+}
+
+
+struct LoadingPreviewProxy<Content>: View
+where Content : View {
+    @ViewBuilder let content: () -> Content
+    @State private var isLoading = true
+    private var modelProxy: ModelContainerProxy = .init()
+    private var appManager: AppManager = .init()
+    
+    public init(@ViewBuilder content: @escaping () -> Content) {
+        self.content = content
+    }
+    
+    var body: some View {
+        Group {
+            if isLoading == false,
+                let modelContainer = modelProxy.modelContainer {
+                content()
+                    .environment(appManager)
+                    .modelContainer(modelContainer)
+            } else {
+                Text("Loading Model Data")
+            }
+        }
+        .task {
+            do {
+                try modelProxy.loadModelContainer()
+                appManager.modelContainer = modelProxy.modelContainer
+            } catch {
+                logger.critical("Failure loading model")
+            }
+            isLoading = false
+        }
     }
 }

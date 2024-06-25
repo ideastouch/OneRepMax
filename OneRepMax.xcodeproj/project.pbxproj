@@ -7,14 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6066BC92C299E3B00256FEC /* SwiftUIExt in Frameworks */ = {isa = PBXBuildFile; productRef = E6066BC82C299E3B00256FEC /* SwiftUIExt */; };
+		E6066BCC2C2A940C00256FEC /* WorkoutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6066BCB2C2A940C00256FEC /* WorkoutChart.swift */; };
+		E6066BCE2C2AB2F000256FEC /* DayValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6066BCD2C2AB2F000256FEC /* DayValueView.swift */; };
 		E6B184F22C253CC9009D0513 /* OneRepMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B184F12C253CC9009D0513 /* OneRepMaxApp.swift */; };
 		E6B184F42C253CC9009D0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B184F32C253CC9009D0513 /* ContentView.swift */; };
-		E6B184F62C253CC9009D0513 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B184F52C253CC9009D0513 /* Item.swift */; };
 		E6B184F82C253CCA009D0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B184F72C253CCA009D0513 /* Assets.xcassets */; };
 		E6B184FB2C253CCA009D0513 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B184FA2C253CCA009D0513 /* Preview Assets.xcassets */; };
 		E6B185052C253CCA009D0513 /* OneRepMaxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185042C253CCA009D0513 /* OneRepMaxTests.swift */; };
 		E6B1850F2C253CCA009D0513 /* OneRepMaxUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1850E2C253CCA009D0513 /* OneRepMaxUITests.swift */; };
 		E6B185112C253CCA009D0513 /* OneRepMaxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185102C253CCA009D0513 /* OneRepMaxUITestsLaunchTests.swift */; };
+		E6B1851E2C253E49009D0513 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E6B1851D2C253E49009D0513 /* README.md */; };
+		E6B1852D2C2658AC009D0513 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185202C2658AC009D0513 /* Workout.swift */; };
+		E6B1852E2C2658AC009D0513 /* ModelContainerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185212C2658AC009D0513 /* ModelContainerProxy.swift */; };
+		E6B1852F2C2658AC009D0513 /* Codable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185232C2658AC009D0513 /* Codable+Ext.swift */; };
+		E6B185302C2658AC009D0513 /* ApiServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185252C2658AC009D0513 /* ApiServer.swift */; };
+		E6B185312C2658AC009D0513 /* URLRequest+Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185262C2658AC009D0513 /* URLRequest+Workout.swift */; };
+		E6B185322C2658AC009D0513 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185282C2658AC009D0513 /* AppManager.swift */; };
+		E6B185332C2658AC009D0513 /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185292C2658AC009D0513 /* Logging.swift */; };
+		E6B185342C2658AC009D0513 /* SortSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1852A2C2658AC009D0513 /* SortSelection.swift */; };
+		E6B185382C26B37E009D0513 /* NetworkKit in Frameworks */ = {isa = PBXBuildFile; productRef = E6B185372C26B37E009D0513 /* NetworkKit */; };
+		E6B1853A2C26B7F6009D0513 /* WorkoutHistorical.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185392C26B7F6009D0513 /* WorkoutHistorical.swift */; };
+		E6B1853C2C26B84B009D0513 /* Workout+OneRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1853B2C26B84B009D0513 /* Workout+OneRM.swift */; };
+		E6B1853E2C26BCCC009D0513 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1853D2C26BCCC009D0513 /* Date+Ext.swift */; };
+		E6B185412C26D9C5009D0513 /* ExerciseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185402C26D9C5009D0513 /* ExerciseListView.swift */; };
+		E6B185452C27704F009D0513 /* WorkoutCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185422C27704F009D0513 /* WorkoutCellView.swift */; };
+		E6B185462C27704F009D0513 /* WorkoutDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185432C27704F009D0513 /* WorkoutDetailView.swift */; };
+		E6B185492C28326B009D0513 /* SwiftExt in Frameworks */ = {isa = PBXBuildFile; productRef = E6B185482C28326B009D0513 /* SwiftExt */; };
+		E6B1854B2C295D34009D0513 /* WorkoutHistoricalEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B1854A2C295D34009D0513 /* WorkoutHistoricalEngine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +55,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6066BCB2C2A940C00256FEC /* WorkoutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutChart.swift; sourceTree = "<group>"; };
+		E6066BCD2C2AB2F000256FEC /* DayValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayValueView.swift; sourceTree = "<group>"; };
 		E6B184EE2C253CC9009D0513 /* OneRepMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneRepMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B184F12C253CC9009D0513 /* OneRepMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxApp.swift; sourceTree = "<group>"; };
 		E6B184F32C253CC9009D0513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E6B184F52C253CC9009D0513 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		E6B184F72C253CCA009D0513 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E6B184FA2C253CCA009D0513 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E6B185002C253CCA009D0513 /* OneRepMaxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneRepMaxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,6 +67,22 @@
 		E6B1850A2C253CCA009D0513 /* OneRepMaxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneRepMaxUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B1850E2C253CCA009D0513 /* OneRepMaxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxUITests.swift; sourceTree = "<group>"; };
 		E6B185102C253CCA009D0513 /* OneRepMaxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E6B1851D2C253E49009D0513 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E6B185202C2658AC009D0513 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		E6B185212C2658AC009D0513 /* ModelContainerProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainerProxy.swift; sourceTree = "<group>"; };
+		E6B185232C2658AC009D0513 /* Codable+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Ext.swift"; sourceTree = "<group>"; };
+		E6B185252C2658AC009D0513 /* ApiServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServer.swift; sourceTree = "<group>"; };
+		E6B185262C2658AC009D0513 /* URLRequest+Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Workout.swift"; sourceTree = "<group>"; };
+		E6B185282C2658AC009D0513 /* AppManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		E6B185292C2658AC009D0513 /* Logging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		E6B1852A2C2658AC009D0513 /* SortSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortSelection.swift; sourceTree = "<group>"; };
+		E6B185392C26B7F6009D0513 /* WorkoutHistorical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistorical.swift; sourceTree = "<group>"; };
+		E6B1853B2C26B84B009D0513 /* Workout+OneRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Workout+OneRM.swift"; sourceTree = "<group>"; };
+		E6B1853D2C26BCCC009D0513 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		E6B185402C26D9C5009D0513 /* ExerciseListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseListView.swift; sourceTree = "<group>"; };
+		E6B185422C27704F009D0513 /* WorkoutCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutCellView.swift; sourceTree = "<group>"; };
+		E6B185432C27704F009D0513 /* WorkoutDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutDetailView.swift; sourceTree = "<group>"; };
+		E6B1854A2C295D34009D0513 /* WorkoutHistoricalEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutHistoricalEngine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +90,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B185492C28326B009D0513 /* SwiftExt in Frameworks */,
+				E6066BC92C299E3B00256FEC /* SwiftUIExt in Frameworks */,
+				E6B185382C26B37E009D0513 /* NetworkKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,13 +113,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E6066BCA2C29A8E600256FEC /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6B185282C2658AC009D0513 /* AppManager.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		E6B184E52C253CC9009D0513 = {
 			isa = PBXGroup;
 			children = (
+				E6B1851D2C253E49009D0513 /* README.md */,
 				E6B184F02C253CC9009D0513 /* OneRepMax */,
 				E6B185032C253CCA009D0513 /* OneRepMaxTests */,
 				E6B1850D2C253CCA009D0513 /* OneRepMaxUITests */,
 				E6B184EF2C253CC9009D0513 /* Products */,
+				E6B185362C26B37E009D0513 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,9 +146,11 @@
 		E6B184F02C253CC9009D0513 /* OneRepMax */ = {
 			isa = PBXGroup;
 			children = (
+				E6066BCA2C29A8E600256FEC /* ViewModel */,
+				E6B1853F2C26D99E009D0513 /* View */,
+				E6B1852B2C2658AC009D0513 /* Model */,
 				E6B184F12C253CC9009D0513 /* OneRepMaxApp.swift */,
 				E6B184F32C253CC9009D0513 /* ContentView.swift */,
-				E6B184F52C253CC9009D0513 /* Item.swift */,
 				E6B184F72C253CCA009D0513 /* Assets.xcassets */,
 				E6B184F92C253CCA009D0513 /* Preview Content */,
 			);
@@ -130,6 +182,75 @@
 			path = OneRepMaxUITests;
 			sourceTree = "<group>";
 		};
+		E6B185222C2658AC009D0513 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				E6B185212C2658AC009D0513 /* ModelContainerProxy.swift */,
+				E6B185202C2658AC009D0513 /* Workout.swift */,
+				E6B185392C26B7F6009D0513 /* WorkoutHistorical.swift */,
+				E6B1853B2C26B84B009D0513 /* Workout+OneRM.swift */,
+				E6B1854A2C295D34009D0513 /* WorkoutHistoricalEngine.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		E6B185242C2658AC009D0513 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E6B185232C2658AC009D0513 /* Codable+Ext.swift */,
+				E6B1853D2C26BCCC009D0513 /* Date+Ext.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		E6B185272C2658AC009D0513 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E6B185252C2658AC009D0513 /* ApiServer.swift */,
+				E6B185262C2658AC009D0513 /* URLRequest+Workout.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E6B1852B2C2658AC009D0513 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E6B185222C2658AC009D0513 /* DataModel */,
+				E6B185242C2658AC009D0513 /* Extension */,
+				E6B185272C2658AC009D0513 /* Network */,
+				E6B185292C2658AC009D0513 /* Logging.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E6B185362C26B37E009D0513 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E6B1853F2C26D99E009D0513 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E6B185442C27704F009D0513 /* SubViews */,
+				E6B185402C26D9C5009D0513 /* ExerciseListView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E6B185442C27704F009D0513 /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				E6B1852A2C2658AC009D0513 /* SortSelection.swift */,
+				E6B185422C27704F009D0513 /* WorkoutCellView.swift */,
+				E6B185432C27704F009D0513 /* WorkoutDetailView.swift */,
+				E6066BCB2C2A940C00256FEC /* WorkoutChart.swift */,
+				E6066BCD2C2AB2F000256FEC /* DayValueView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +267,11 @@
 			dependencies = (
 			);
 			name = OneRepMax;
+			packageProductDependencies = (
+				E6B185372C26B37E009D0513 /* NetworkKit */,
+				E6B185482C28326B009D0513 /* SwiftExt */,
+				E6066BC82C299E3B00256FEC /* SwiftUIExt */,
+			);
 			productName = OneRepMax;
 			productReference = E6B184EE2C253CC9009D0513 /* OneRepMax.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +344,11 @@
 				Base,
 			);
 			mainGroup = E6B184E52C253CC9009D0513;
+			packageReferences = (
+				E6B185352C26ADED009D0513 /* XCRemoteSwiftPackageReference "NetworkKit" */,
+				E6B185472C28326B009D0513 /* XCRemoteSwiftPackageReference "SwiftExt" */,
+				E6066BC72C299E3B00256FEC /* XCRemoteSwiftPackageReference "SwiftUIExt" */,
+			);
 			productRefGroup = E6B184EF2C253CC9009D0513 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -234,6 +365,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6B1851E2C253E49009D0513 /* README.md in Resources */,
 				E6B184FB2C253CCA009D0513 /* Preview Assets.xcassets in Resources */,
 				E6B184F82C253CCA009D0513 /* Assets.xcassets in Resources */,
 			);
@@ -260,9 +392,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E6066BCE2C2AB2F000256FEC /* DayValueView.swift in Sources */,
+				E6B1853C2C26B84B009D0513 /* Workout+OneRM.swift in Sources */,
+				E6B185342C2658AC009D0513 /* SortSelection.swift in Sources */,
+				E6B185312C2658AC009D0513 /* URLRequest+Workout.swift in Sources */,
+				E6B185322C2658AC009D0513 /* AppManager.swift in Sources */,
+				E6B185412C26D9C5009D0513 /* ExerciseListView.swift in Sources */,
+				E6B1852F2C2658AC009D0513 /* Codable+Ext.swift in Sources */,
+				E6B185452C27704F009D0513 /* WorkoutCellView.swift in Sources */,
+				E6B185462C27704F009D0513 /* WorkoutDetailView.swift in Sources */,
+				E6B1853E2C26BCCC009D0513 /* Date+Ext.swift in Sources */,
+				E6B185332C2658AC009D0513 /* Logging.swift in Sources */,
+				E6B1852E2C2658AC009D0513 /* ModelContainerProxy.swift in Sources */,
 				E6B184F42C253CC9009D0513 /* ContentView.swift in Sources */,
-				E6B184F62C253CC9009D0513 /* Item.swift in Sources */,
+				E6066BCC2C2A940C00256FEC /* WorkoutChart.swift in Sources */,
+				E6B185302C2658AC009D0513 /* ApiServer.swift in Sources */,
+				E6B1854B2C295D34009D0513 /* WorkoutHistoricalEngine.swift in Sources */,
+				E6B1852D2C2658AC009D0513 /* Workout.swift in Sources */,
 				E6B184F22C253CC9009D0513 /* OneRepMaxApp.swift in Sources */,
+				E6B1853A2C26B7F6009D0513 /* WorkoutHistorical.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +740,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E6066BC72C299E3B00256FEC /* XCRemoteSwiftPackageReference "SwiftUIExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iDT-Swift/SwiftUIExt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.1.0;
+			};
+		};
+		E6B185352C26ADED009D0513 /* XCRemoteSwiftPackageReference "NetworkKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iDT-Swift/NetworkKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+		E6B185472C28326B009D0513 /* XCRemoteSwiftPackageReference "SwiftExt" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/iDT-Swift/SwiftExt.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E6066BC82C299E3B00256FEC /* SwiftUIExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6066BC72C299E3B00256FEC /* XCRemoteSwiftPackageReference "SwiftUIExt" */;
+			productName = SwiftUIExt;
+		};
+		E6B185372C26B37E009D0513 /* NetworkKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6B185352C26ADED009D0513 /* XCRemoteSwiftPackageReference "NetworkKit" */;
+			productName = NetworkKit;
+		};
+		E6B185482C28326B009D0513 /* SwiftExt */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E6B185472C28326B009D0513 /* XCRemoteSwiftPackageReference "SwiftExt" */;
+			productName = SwiftExt;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E6B184E62C253CC9009D0513 /* Project object */;
 }

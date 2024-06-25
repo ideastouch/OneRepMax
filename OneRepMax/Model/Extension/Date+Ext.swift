@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+extension Date {
+    static let min: Date = Date(timeIntervalSince1970: 0) // January 1, 1970
+    static let max: Date = Date(timeIntervalSince1970: TimeInterval(Int.max)) // Far future date
+}
