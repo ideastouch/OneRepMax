@@ -85,13 +85,13 @@ extension ContentView {
                                     Task { await refresh(googleFileId: gDriveText) } }
                                 gDriveActive.toggle()
                             } label:
-                            { Text("Download").buttonDecorator() }
+                            { Text("Download").buttonDecorator(foreground: buttonForeground) }
                             Button {
                                 gDriveText = ContentView.gDriveDefault
                                 Task { await refresh(googleFileId: gDriveText) }
                                 gDriveActive.toggle()
                             } label:
-                            { Text("Default").buttonDecorator() }
+                            { Text("Default").buttonDecorator(foreground: buttonForeground) }
                             Button { gDriveActive.toggle()
                             } label:
                             { Text("Cancel").buttonDecorator(foreground: .red) }
