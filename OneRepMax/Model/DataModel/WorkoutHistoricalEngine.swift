@@ -6,13 +6,13 @@
 //
 
 import Foundation
+import SwiftExt
 
 fileprivate
 let loggerDataModel = LoggerFactory.category(.dataModel)
 
 actor WorkoutHistoricalEngine {
     func process(workoutList: [ResponseWorkout], favorityStatus: [String: Bool] ) throws -> ([WorkoutHistorical], [Workout]) {
-        // TODO move the process below to an actor
         let workoutsByExercise = workoutList.reduce(into: [String: [ResponseWorkout]]() ) {
             let exercise = $1.exercise
             var workouts = $0[exercise] ?? [ResponseWorkout]()

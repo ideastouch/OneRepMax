@@ -13,6 +13,7 @@ fileprivate
 let logger = LoggerFactory.category(.setup)
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(AppManager.self) var appManager
     @State var filter: String = .init()
@@ -56,6 +57,10 @@ struct ContentView: View {
 
 /// Toolbars
 extension ContentView {
+    
+    var buttonForeground: Color {
+        colorScheme == .dark ? .white : .black
+    }
     private
     func navigationBar() -> some ToolbarContent {
         ToolbarItem(placement: .navigationBarTrailing) {
@@ -64,39 +69,42 @@ extension ContentView {
                 } label: {
                     Text("Clear").buttonDecorator(foreground: .red)
                 }
-                Button { gDriveActive.toggle() } label:
-                { Text("GDrive").buttonDecorator() }
-                    .popover(isPresented: $gDriveActive) {
-                        VStack {
-                            TextField("Google File Id",
-                                      text: $gDriveText)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-                            .presentationCompactAdaptation((.popover))
-                            HStack {
-                                Button {
-                                    if gDriveText.isEmpty == false {
-                                        Task { await refresh(googleFileId: gDriveText) } }
-                                    gDriveActive.toggle()
-                                } label:
-                                { Text("Download").buttonDecorator() }
-                                Button {
-                                    gDriveText = ContentView.gDriveDefault
-                                    Task { await refresh(googleFileId: gDriveText) }
-                                    gDriveActive.toggle()
-                                } label:
-                                { Text("Default").buttonDecorator() }
-                                Button { gDriveActive.toggle()
-                                } label:
-                                { Text("Cancel").buttonDecorator(foreground: .red) }
-                                
-                            }
-                            .padding()
+                Button { gDriveActive.toggle() } label: {
+                    Text("GDrive").buttonDecorator(foreground: buttonForeground)
+                }
+                .popover(isPresented: $gDriveActive) {
+                    VStack {
+                        TextField("Google File Id",
+                                  text: $gDriveText)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding()
+                        .presentationCompactAdaptation((.popover))
+                        HStack {
+                            Button {
+                                if gDriveText.isEmpty == false {
+                                    Task { await refresh(googleFileId: gDriveText) } }
+                                gDriveActive.toggle()
+                            } label:
+                            { Text("Download").buttonDecorator() }
+                            Button {
+                                gDriveText = ContentView.gDriveDefault
+                                Task { await refresh(googleFileId: gDriveText) }
+                                gDriveActive.toggle()
+                            } label:
+                            { Text("Default").buttonDecorator() }
+                            Button { gDriveActive.toggle()
+                            } label:
+                            { Text("Cancel").buttonDecorator(foreground: .red) }
+                            
                         }
+                        .padding()
                     }
+                }
                 Button { presentImporter.toggle() } label: {
-                    Text("Open").buttonDecorator() }
-            }.fileImporter(isPresented: $presentImporter, allowedContentTypes: [.text]) { result in
+                    Text("Open").buttonDecorator(foreground: buttonForeground) }
+            }
+            .fileImporter(isPresented: $presentImporter,
+                          allowedContentTypes: [.text]) { result in
                 switch result {
                 case .success(let url):
                     Task { await refresh(fileURL: url) }
@@ -187,7 +195,7 @@ extension View {
     func buttonDecorator(foreground:Color = .black) -> some View {
         self.contentRoundedBorder(foreground: foreground,
                                   background: .clear,
-                                  borderColor: .black,
+                                  borderColor: foreground,
                                   maxWidth: nil,
                                   padding: .body * 0.5)
     }

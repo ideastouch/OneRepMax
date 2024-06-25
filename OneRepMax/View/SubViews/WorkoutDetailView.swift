@@ -9,10 +9,6 @@ import SwiftUI
 import SwiftUIExt
 import SwiftData
 
-//extension Workout: Identifiable {
-//    var id: Date { date }
-//}
-
 struct WorkoutDetailView: View {
     let workoutHistorical: WorkoutHistorical
     @State private var yDomainRange: YDomainRange = .fullRange

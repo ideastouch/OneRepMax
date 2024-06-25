@@ -12,8 +12,16 @@ import SwiftData
 enum YDomainRange: String, Identifiable, CaseIterable {
     case fullRange = "Full Range"
     case minToMax = "Min to Max"
-    
     var id: Self { self }
+}
+
+fileprivate
+extension Date {
+    var formated: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yy"
+        return dateFormatter.string(from: self)
+    }
 }
 
 struct WorkoutChart: View {
@@ -34,16 +42,6 @@ struct WorkoutChart: View {
             sort: [SortDescriptor(\Workout.date, order: .forward)])
     }
     
-    
-    func equidistantIndexes(count: Int) -> [Int] {
-        return [0, count / 4, count / 2, (count * 3) / 4, count - 1]
-    }
-    func formatDate(_ date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "MMM dd, yy"
-        return dateFormatter.string(from: date)
-    }
-    
     var body: some View {
         Chart(Array(workoutList.enumerated()), id: \.element.id) { index, workout in
             LineMark(
@@ -57,7 +55,7 @@ struct WorkoutChart: View {
             AxisMarks(values: self.xAxisValues) {
                 value in
                 AxisValueLabel {
-                    Text(formatDate( workoutList[value.index].date ))
+                    Text( workoutList[value.index].date.formated )
                 }
             }
         }

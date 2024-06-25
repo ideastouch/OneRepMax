@@ -24,8 +24,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/iDT-Swift/SwiftUIExt.git",
       "state" : {
-        "revision" : "6b54eaeb26e460652cc37402f0fb7416aae63b47",
-        "version" : "7.2.1"
+        "revision" : "830e1caab81d521ba8d19e99e90f41b97db0fbeb",
+        "version" : "7.2.2"
       }
     }
   ],
