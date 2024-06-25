@@ -58,7 +58,6 @@ struct ExerciseListView: View {
                         .padding()
                     Spacer()
                 }
-                .background(Color.white)
                 
             } else {
                 List {
