@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 
 fileprivate
 let logger = LoggerFactory.category(.setup)
@@ -14,7 +13,6 @@ let logger = LoggerFactory.category(.setup)
 @main
 struct OneRepMaxApp: App {
     @State private var isLoading = true
-    private var modelProxy: ModelContainerProxy = .init()
     private var appManager: AppManager = .init()
 
 
@@ -22,7 +20,7 @@ struct OneRepMaxApp: App {
         WindowGroup {
             Group {
                 if isLoading == false,
-                    let modelContainer = modelProxy.modelContainer {
+                    let modelContainer = appManager.modelContainer {
                     ContentView()
                         .environment(appManager)
                         .modelContainer(modelContainer)
@@ -32,8 +30,7 @@ struct OneRepMaxApp: App {
             }
             .task {
                 do {
-                    try modelProxy.loadModelContainer()
-                    appManager.modelContainer = modelProxy.modelContainer
+                    appManager.modelContainer = try await ModelContainerFactory().makeOne()
                 } catch {
                     logger.critical("Failure loading model")
                 }
@@ -48,7 +45,6 @@ struct LoadingPreviewProxy<Content>: View
 where Content : View {
     @ViewBuilder let content: () -> Content
     @State private var isLoading = true
-    private var modelProxy: ModelContainerProxy = .init()
     private var appManager: AppManager = .init()
     
     public init(@ViewBuilder content: @escaping () -> Content) {
@@ -58,7 +54,7 @@ where Content : View {
     var body: some View {
         Group {
             if isLoading == false,
-                let modelContainer = modelProxy.modelContainer {
+                let modelContainer = appManager.modelContainer {
                 content()
                     .environment(appManager)
                     .modelContainer(modelContainer)
@@ -68,8 +64,7 @@ where Content : View {
         }
         .task {
             do {
-                try modelProxy.loadModelContainer()
-                appManager.modelContainer = modelProxy.modelContainer
+                appManager.modelContainer = try await ModelContainerFactory().makeOne(isStoredInMemoryOnly: true)
             } catch {
                 logger.critical("Failure loading model")
             }

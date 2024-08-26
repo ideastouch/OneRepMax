@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E6066BC92C299E3B00256FEC /* SwiftUIExt in Frameworks */ = {isa = PBXBuildFile; productRef = E6066BC82C299E3B00256FEC /* SwiftUIExt */; };
 		E6066BCC2C2A940C00256FEC /* WorkoutChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6066BCB2C2A940C00256FEC /* WorkoutChart.swift */; };
+		E66D54DB2C3F2A3D00FB2EB3 /* workourData.txt in Resources */ = {isa = PBXBuildFile; fileRef = E66D54DA2C3F2A3D00FB2EB3 /* workourData.txt */; };
 		E6B184F22C253CC9009D0513 /* OneRepMaxApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B184F12C253CC9009D0513 /* OneRepMaxApp.swift */; };
 		E6B184F42C253CC9009D0513 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B184F32C253CC9009D0513 /* ContentView.swift */; };
 		E6B184F82C253CCA009D0513 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6B184F72C253CCA009D0513 /* Assets.xcassets */; };
@@ -18,7 +19,7 @@
 		E6B185112C253CCA009D0513 /* OneRepMaxUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185102C253CCA009D0513 /* OneRepMaxUITestsLaunchTests.swift */; };
 		E6B1851E2C253E49009D0513 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = E6B1851D2C253E49009D0513 /* README.md */; };
 		E6B1852D2C2658AC009D0513 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185202C2658AC009D0513 /* Workout.swift */; };
-		E6B1852E2C2658AC009D0513 /* ModelContainerProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185212C2658AC009D0513 /* ModelContainerProxy.swift */; };
+		E6B1852E2C2658AC009D0513 /* ModelContainerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185212C2658AC009D0513 /* ModelContainerFactory.swift */; };
 		E6B1852F2C2658AC009D0513 /* Codable+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185232C2658AC009D0513 /* Codable+Ext.swift */; };
 		E6B185302C2658AC009D0513 /* ApiServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185252C2658AC009D0513 /* ApiServer.swift */; };
 		E6B185312C2658AC009D0513 /* URLRequest+Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B185262C2658AC009D0513 /* URLRequest+Workout.swift */; };
@@ -55,6 +56,7 @@
 
 /* Begin PBXFileReference section */
 		E6066BCB2C2A940C00256FEC /* WorkoutChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutChart.swift; sourceTree = "<group>"; };
+		E66D54DA2C3F2A3D00FB2EB3 /* workourData.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = workourData.txt; sourceTree = "<group>"; };
 		E6B184EE2C253CC9009D0513 /* OneRepMax.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneRepMax.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B184F12C253CC9009D0513 /* OneRepMaxApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxApp.swift; sourceTree = "<group>"; };
 		E6B184F32C253CC9009D0513 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,7 +69,7 @@
 		E6B185102C253CCA009D0513 /* OneRepMaxUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneRepMaxUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E6B1851D2C253E49009D0513 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E6B185202C2658AC009D0513 /* Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
-		E6B185212C2658AC009D0513 /* ModelContainerProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainerProxy.swift; sourceTree = "<group>"; };
+		E6B185212C2658AC009D0513 /* ModelContainerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainerFactory.swift; sourceTree = "<group>"; };
 		E6B185232C2658AC009D0513 /* Codable+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Codable+Ext.swift"; sourceTree = "<group>"; };
 		E6B185252C2658AC009D0513 /* ApiServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiServer.swift; sourceTree = "<group>"; };
 		E6B185262C2658AC009D0513 /* URLRequest+Workout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+Workout.swift"; sourceTree = "<group>"; };
@@ -119,6 +121,14 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		E66D54D92C3F258100FB2EB3 /* files */ = {
+			isa = PBXGroup;
+			children = (
+				E66D54DA2C3F2A3D00FB2EB3 /* workourData.txt */,
+			);
+			path = files;
+			sourceTree = "<group>";
+		};
 		E6B184E52C253CC9009D0513 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		E6B185032C253CCA009D0513 /* OneRepMaxTests */ = {
 			isa = PBXGroup;
 			children = (
+				E66D54D92C3F258100FB2EB3 /* files */,
 				E6B185042C253CCA009D0513 /* OneRepMaxTests.swift */,
 			);
 			path = OneRepMaxTests;
@@ -183,7 +194,7 @@
 		E6B185222C2658AC009D0513 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				E6B185212C2658AC009D0513 /* ModelContainerProxy.swift */,
+				E6B185212C2658AC009D0513 /* ModelContainerFactory.swift */,
 				E6B185202C2658AC009D0513 /* Workout.swift */,
 				E6B185392C26B7F6009D0513 /* WorkoutHistorical.swift */,
 				E6B1853B2C26B84B009D0513 /* Workout+OneRM.swift */,
@@ -372,6 +383,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E66D54DB2C3F2A3D00FB2EB3 /* workourData.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +411,7 @@
 				E6B185462C27704F009D0513 /* WorkoutDetailView.swift in Sources */,
 				E6B1853E2C26BCCC009D0513 /* Date+Ext.swift in Sources */,
 				E6B185332C2658AC009D0513 /* Logging.swift in Sources */,
-				E6B1852E2C2658AC009D0513 /* ModelContainerProxy.swift in Sources */,
+				E6B1852E2C2658AC009D0513 /* ModelContainerFactory.swift in Sources */,
 				E6B184F42C253CC9009D0513 /* ContentView.swift in Sources */,
 				E6066BCC2C2A940C00256FEC /* WorkoutChart.swift in Sources */,
 				E6B185302C2658AC009D0513 /* ApiServer.swift in Sources */,

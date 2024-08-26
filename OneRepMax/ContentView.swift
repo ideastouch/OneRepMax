@@ -72,34 +72,7 @@ extension ContentView {
                 Button { gDriveActive.toggle() } label: {
                     Text("GDrive").buttonDecorator(foreground: buttonForeground)
                 }
-                .popover(isPresented: $gDriveActive) {
-                    VStack {
-                        TextField("Google File Id",
-                                  text: $gDriveText)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding()
-                        .presentationCompactAdaptation((.popover))
-                        HStack {
-                            Button {
-                                if gDriveText.isEmpty == false {
-                                    Task { await refresh(googleFileId: gDriveText) } }
-                                gDriveActive.toggle()
-                            } label:
-                            { Text("Download").buttonDecorator(foreground: buttonForeground) }
-                            Button {
-                                gDriveText = ContentView.gDriveDefault
-                                Task { await refresh(googleFileId: gDriveText) }
-                                gDriveActive.toggle()
-                            } label:
-                            { Text("Default").buttonDecorator(foreground: buttonForeground) }
-                            Button { gDriveActive.toggle()
-                            } label:
-                            { Text("Cancel").buttonDecorator(foreground: .red) }
-                            
-                        }
-                        .padding()
-                    }
-                }
+                .popover(isPresented: $gDriveActive, content: googleDrivePopover)
                 Button { presentImporter.toggle() } label: {
                     Text("Open").buttonDecorator(foreground: buttonForeground) }
             }
@@ -114,6 +87,37 @@ extension ContentView {
             }
         }
     }
+    
+    private
+    func googleDrivePopover () -> some View {
+        VStack {
+            TextField("Google File Id",
+                      text: $gDriveText)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .padding()
+            .presentationCompactAdaptation((.popover))
+            HStack {
+                Button {
+                    if gDriveText.isEmpty == false {
+                        Task { await refresh(googleFileId: gDriveText) } }
+                    gDriveActive.toggle()
+                } label:
+                { Text("Download").buttonDecorator(foreground: buttonForeground) }
+                Button {
+                    gDriveText = ContentView.gDriveDefault
+                    Task { await refresh(googleFileId: gDriveText) }
+                    gDriveActive.toggle()
+                } label:
+                { Text("Default").buttonDecorator(foreground: buttonForeground) }
+                Button { gDriveActive.toggle()
+                } label:
+                { Text("Cancel").buttonDecorator(foreground: .red) }
+                
+            }
+            .padding()
+        }
+    }
+    
     
     private
     func bottomBar() -> some ToolbarContent {
