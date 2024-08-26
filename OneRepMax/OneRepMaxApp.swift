@@ -64,6 +64,8 @@ where Content : View {
         .task {
             do {
                 appManager.modelContainer = try await ModelContainerFactory().makeOne(isStoredInMemoryOnly: true)
+                let googleFileId = "1HomqPGU5CW6Wqk5ykM0goZLAiAgtTtl2"
+                try await appManager.loadWorkouts(googleFileId: googleFileId)
                 isLoading = false
             } catch {
                 logger.critical("Failure loading model")

@@ -26,7 +26,7 @@ struct WorkoutCellView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                 Image(systemName: workoutHistorical.favorite ? "star.fill" : "star")
-                    .foregroundColor(workoutHistorical.favorite ? .yellow : .black)
+                    .foregroundColor(workoutHistorical.favorite ? .yellow : .gray)
                     .onTapGesture { workoutHistorical.favorite.toggle() }
             }
             .padding(.trailing)
@@ -37,7 +37,7 @@ struct WorkoutCellView: View {
 #Preview {
     LoadingPreviewProxy {
         ZStack {
-            Color.gray
+            Color.white
             VStack {
                 WorkoutCellView(workoutHistorical: .init(exercise: "Brench", 
                                                          maxOneRM: 234))
