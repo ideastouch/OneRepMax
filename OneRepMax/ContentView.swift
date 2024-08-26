@@ -14,7 +14,6 @@ let logger = LoggerFactory.category(.setup)
 
 struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
-    @Environment(\.modelContext) private var modelContext
     @Environment(AppManager.self) var appManager
     @State var filter: String = .init()
     @State var sortSelection: SortSelection = .NoOrder

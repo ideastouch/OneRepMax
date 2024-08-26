@@ -15,7 +15,6 @@ struct OneRepMaxApp: App {
     @State private var isLoading = true
     private var appManager: AppManager = .init()
 
-
     var body: some Scene {
         WindowGroup {
             Group {
@@ -65,10 +64,10 @@ where Content : View {
         .task {
             do {
                 appManager.modelContainer = try await ModelContainerFactory().makeOne(isStoredInMemoryOnly: true)
+                isLoading = false
             } catch {
                 logger.critical("Failure loading model")
             }
-            isLoading = false
         }
     }
 }
